@@ -15,8 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "EduConnect - Your Gateway to Global Education",
-  description: "Professional student consultancy services helping students from Pakistan achieve their dreams of studying abroad. 95% visa success rate, 50,000+ successful enrollments.",
+  title: "Teerma Consultancy - Your Gateway to Global Education",
+  description:
+    "Professional student consultancy services helping students from Pakistan achieve their dreams of studying abroad. 95% visa success rate, 50,000+ successful enrollments.",
 };
 
 export default function RootLayout({

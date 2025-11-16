@@ -65,13 +65,16 @@ const countryLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer
+      className="text-white"
+      style={{ backgroundColor: "hsl(210, 70%, 10%)" }}
+    >
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold">EduConnect</h3>
-            <p className="text-primary-foreground/80 text-sm leading-relaxed">
+            <h3 className="text-2xl font-bold">Teerma Consultancy</h3>
+            <p className="text-white/80 text-sm leading-relaxed">
               We are leading consultancy firm providing quality education
               services all over Pakistan to students wishing to study abroad.
             </p>
@@ -80,7 +83,7 @@ export default function Footer() {
                 <a
                   key={social.name}
                   href={social.href}
-                  className="w-10 h-10 rounded-full bg-primary-foreground/10 hover:bg-accent flex items-center justify-center text-primary-foreground hover:text-white transition-all hover:scale-110"
+                  className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white/80 hover:text-white transition-all hover:scale-110"
                   aria-label={social.name}
                 >
                   {social.icon}
@@ -97,7 +100,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-primary-foreground/80 hover:text-accent transition-colors text-sm"
+                    className="text-white/80 hover:text-white transition-colors text-sm"
                   >
                     {link.name}
                   </a>
@@ -114,7 +117,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-primary-foreground/80 hover:text-accent transition-colors text-sm"
+                    className="text-white/80 hover:text-white transition-colors text-sm"
                   >
                     {link.name}
                   </a>
@@ -126,7 +129,7 @@ export default function Footer() {
           {/* Contact Info */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
-            <ul className="space-y-3 text-sm text-primary-foreground/80">
+            <ul className="space-y-3 text-sm text-white/80">
               <li className="flex items-start gap-3">
                 <svg
                   className="w-5 h-5 text-accent flex-shrink-0 mt-0.5"
@@ -167,7 +170,7 @@ export default function Footer() {
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                   />
                 </svg>
-                <span>+92 345 8454770</span>
+                <span>+92 305 8787447</span>
               </li>
               <li className="flex items-center gap-3">
                 <svg
@@ -183,21 +186,20 @@ export default function Footer() {
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   />
                 </svg>
-                <span>info@edconnect.com</span>
+                <span>info@teermconsultancy.com</span>
               </li>
             </ul>
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-primary-foreground/20 pt-8 mt-8">
-          <p className="text-center text-sm text-primary-foreground/60">
-            Copyright © {new Date().getFullYear()} EduConnect. All rights
-            reserved.
+        <div className="border-t border-white/20 pt-8 mt-8">
+          <p className="text-center text-sm text-white/60">
+            Copyright © {new Date().getFullYear()} Teerma Consultancy. All
+            rights reserved.
           </p>
         </div>
       </div>
     </footer>
   );
 }
-

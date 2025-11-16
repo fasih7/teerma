@@ -3,6 +3,13 @@
 import { Button } from "@/components/ui/button";
 
 export default function HeroSection() {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <section
       id="home"
@@ -52,6 +59,7 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <Button
               size="lg"
+              onClick={scrollToContact}
               className="bg-[hsl(177,100%,28%)] hover:bg-[hsl(177,100%,32%)] text-white px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all hover:scale-105 border-0"
             >
               Book Your Consultation
@@ -68,7 +76,7 @@ export default function HeroSection() {
       </div>
 
       {/* Trust Indicator Cards - Overlapping with next section */}
-      <div className="absolute bottom-0 left-0 right-0 z-30 transform translate-y-1/2 pointer-events-none">
+      <div className="hidden md:block absolute bottom-0 left-0 right-0 z-30 transform translate-y-1/2 pointer-events-none">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto pointer-events-auto">
             {/* Card 1 */}
