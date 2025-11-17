@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
@@ -39,9 +40,20 @@ export default function Navigation() {
           {/* Logo */}
           <a
             href="#home"
-            className="text-2xl font-bold gradient-text transition-transform hover:scale-105"
+            className="transition-transform hover:scale-105 flex items-center"
           >
-            Teerma
+            <Image
+              src={
+                scrolled
+                  ? "/images/logos/TEERMA LOGO BLACK v2.png"
+                  : "/images/logos/TEERMA LOGO COLORS v2.png"
+              }
+              alt="Teerma Consultancy"
+              width={120}
+              height={50}
+              className="h-12 w-auto object-contain"
+              priority
+            />
           </a>
 
           {/* Desktop Navigation */}

@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 const socialLinks = [
   {
     name: "Facebook",
@@ -73,6 +75,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div className="space-y-4">
+            <Image
+              src="/images/logos/TEERMA LOGO WHITE v2.png"
+              alt="Teerma Consultancy"
+              width={150}
+              height={50}
+              className="h-12 w-auto object-contain mb-2"
+            />
             <h3 className="text-2xl font-bold">Teerma Consultancy</h3>
             <p className="text-white/80 text-sm leading-relaxed">
               We are leading consultancy firm providing quality education
