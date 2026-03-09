@@ -51,25 +51,25 @@ const socialLinks = [
 ];
 
 const quickLinks = [
-  { name: "Home", href: "#home" },
-  { name: "About Us", href: "#about" },
+  { name: "FES Offices", href: "#" },
   { name: "Services", href: "#services" },
-  { name: "Contact", href: "#contact" },
+  { name: "Blogs", href: "#" },
+  { name: "FES UAE", href: "#" },
 ];
 
 const countryLinks = [
-  { name: "Cyprus", href: "/countries/cyprus" },
-  { name: "Russia", href: "/countries/russia" },
-  { name: "Malaysia", href: "/countries/malaysia" },
-  { name: "China", href: "/countries/china" },
-  { name: "Uzbekistan", href: "/countries/uzbekistan" },
+  { name: "United Kingdom", href: "#" },
+  { name: "Hungary", href: "#" },
+  { name: "UAE", href: "#" },
+  { name: "Canada", href: "#" },
+  { name: "United States of America", href: "#" },
 ];
 
 export default function Footer() {
   return (
     <footer
       className="text-white"
-      style={{ backgroundColor: "#2A2320" }}
+      style={{ backgroundColor: "hsl(210, 70%, 10%)" }}
     >
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">

@@ -18,12 +18,12 @@ export default function Navigation() {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "/#home" },
-    { name: "About Us", href: "/#about" },
-    { name: "Countries", href: "/#countries" },
-    { name: "Services", href: "/#services" },
-    { name: "Why Teerma", href: "/#why-teerma" },
-    { name: "Contact", href: "/#contact" },
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Services", href: "#services" },
+    { name: "Countries", href: "#countries" },
+    { name: "Testimonials", href: "#testimonials" },
+    { name: "Contact", href: "#contact" },
   ];
 
   return (
@@ -31,22 +31,23 @@ export default function Navigation() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "shadow-md py-3 backdrop-blur-md"
+          ? "bg-white/95 backdrop-blur-md shadow-md py-3"
           : "bg-transparent py-5"
       )}
-      style={{
-        backgroundColor: scrolled ? "rgba(42, 35, 32, 0.97)" : "transparent",
-      }}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a
-            href="/"
+            href="#home"
             className="transition-transform hover:scale-105 flex items-center"
           >
             <Image
-              src="/images/logos/TEERMA LOGO COLORS v2.png"
+              src={
+                scrolled
+                  ? "/images/logos/TEERMA LOGO BLACK v2.png"
+                  : "/images/logos/TEERMA LOGO COLORS v2.png"
+              }
               alt="Teerma Consultancy"
               width={120}
               height={50}
@@ -61,30 +62,18 @@ export default function Navigation() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-[15px] font-medium transition-colors relative group"
-                style={{ color: "#F2E8DC" }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#4BBFB8")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "#F2E8DC")}
+                className="text-sm font-medium text-foreground hover:text-accent transition-colors relative group"
               >
                 {link.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 transition-all group-hover:w-full" style={{ backgroundColor: "#4BBFB8" }} />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all group-hover:w-full" />
               </a>
             ))}
-            <a
-              href="https://wa.me/923058787447"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Button
+              className="bg-accent hover:bg-accent/90 text-white"
+              size="sm"
             >
-              <Button
-                className="text-white text-sm font-semibold cursor-pointer"
-                style={{ backgroundColor: "#D4522A" }}
-                size="sm"
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#BE4924")}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#D4522A")}
-              >
-                WhatsApp Us
-              </Button>
-            </a>
+              Get Started
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -96,7 +85,7 @@ export default function Navigation() {
             <svg
               className="w-6 h-6"
               fill="none"
-              stroke="#F2E8DC"
+              stroke="currentColor"
               viewBox="0 0 24 24"
             >
               {mobileMenuOpen ? (
@@ -125,27 +114,18 @@ export default function Navigation() {
               <a
                 key={link.name}
                 href={link.href}
-                className="block text-[15px] font-medium transition-colors py-2"
-                style={{ color: "#F2E8DC" }}
+                className="block text-sm font-medium text-foreground hover:text-accent transition-colors py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.name}
               </a>
             ))}
-            <a
-              href="https://wa.me/923058787447"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block"
+            <Button
+              className="w-full bg-accent hover:bg-accent/90 text-white mt-2"
+              size="sm"
             >
-              <Button
-                className="w-full text-white mt-2 font-semibold cursor-pointer"
-                style={{ backgroundColor: "#D4522A" }}
-                size="sm"
-              >
-                WhatsApp Us
-              </Button>
-            </a>
+              Get Started
+            </Button>
           </div>
         )}
       </div>
