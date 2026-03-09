@@ -1,23 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
-import Navigation from "@/components/navigation";
-import Footer from "@/components/footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
-  title: "Teerma Consultancy - Your Gateway to Global Education",
+  title: "Teerma Consultancy — Think Big. Study Abroad.",
   description:
-    "Professional student consultancy services helping students from Pakistan achieve their dreams of studying abroad. 95% visa success rate, 50,000+ successful enrollments.",
+    "Teerma Consultancy has guided hundreds of students to top universities across Cyprus, Russia, Malaysia, China, Uzbekistan, and beyond. 6+ years of real industry experience with a proven visa success track record.",
 };
 
 export default function RootLayout({
@@ -27,12 +22,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Navigation />
+      <body className={`${poppins.variable} antialiased font-[family-name:var(--font-poppins)]`}>
         {children}
-        <Footer />
       </body>
     </html>
   );
