@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 const trustBadges = [
@@ -20,36 +21,50 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden"
-      style={{
-        background: "linear-gradient(135deg, #2A2320 0%, #1E1A17 40%, #2A2320 70%, #322823 100%)",
-      }}
+      className="relative min-h-screen flex items-center overflow-hidden bg-[#1E1A17]"
     >
-      {/* Radial accent glow */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/hero3.jpg"
+          alt="Students planning study abroad with Teerma Consultancy"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[65%_center]"
+        />
+      </div>
       <div
-        className="absolute inset-0 pointer-events-none"
+        aria-hidden
+        className="absolute inset-0 z-[1] pointer-events-none bg-black/30"
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 z-[2] pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse 60% 50% at 75% 50%, rgba(75,191,184,0.06) 0%, transparent 70%)",
+          background:
+            "linear-gradient(90deg, rgba(30,26,23,0.94) 0%, rgba(30,26,23,0.78) 42%, rgba(30,26,23,0.35) 68%, rgba(30,26,23,0.08) 100%)",
         }}
       />
-
-      {/* Subtle world map watermark */}
       <div
-        className="absolute inset-0 bg-center bg-no-repeat bg-cover opacity-[0.06] pointer-events-none"
+        aria-hidden
+        className="absolute inset-0 z-[3] pointer-events-none"
         style={{
-          backgroundImage:
-            "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 500'%3E%3Cellipse cx='500' cy='250' rx='420' ry='200' fill='none' stroke='%234BBFB8' stroke-width='0.5'/%3E%3Cellipse cx='500' cy='250' rx='420' ry='200' fill='none' stroke='%234BBFB8' stroke-width='0.5' transform='rotate(60 500 250)'/%3E%3Cellipse cx='500' cy='250' rx='420' ry='200' fill='none' stroke='%234BBFB8' stroke-width='0.5' transform='rotate(120 500 250)'/%3E%3Ccircle cx='500' cy='250' r='200' fill='none' stroke='%234BBFB8' stroke-width='0.3'/%3E%3Ccircle cx='500' cy='250' r='300' fill='none' stroke='%234BBFB8' stroke-width='0.3'/%3E%3Ccircle cx='500' cy='250' r='400' fill='none' stroke='%234BBFB8' stroke-width='0.3'/%3E%3C/svg%3E\")",
+          background:
+            "radial-gradient(ellipse 55% 55% at 78% 45%, rgba(75,191,184,0.08) 0%, transparent 62%)",
         }}
       />
 
       <div className="container mx-auto px-6 md:px-20 lg:px-[120px] relative z-10 py-32 md:py-0">
         <div className="flex items-center min-h-screen">
-          {/* Left Content — 60% */}
-          <div className="w-full lg:w-[60%]">
+          <div className="w-full max-w-[680px]">
             {/* Pre-headline */}
             <p
               className="text-sm font-semibold uppercase tracking-[2px] mb-4 animate-fade-in opacity-0"
-              style={{ color: "#4BBFB8", animationDelay: "0.1s", animationFillMode: "forwards" }}
+              style={{
+                color: "#4BBFB8",
+                animationDelay: "0.1s",
+                animationFillMode: "forwards",
+              }}
             >
               Think Big. Study Abroad.
             </p>
@@ -57,7 +72,11 @@ export default function HeroSection() {
             {/* Main Headline */}
             <h1
               className="text-4xl md:text-[58px] lg:text-[60px] font-bold leading-[1.2] mb-6 animate-fade-in opacity-0"
-              style={{ color: "#F2E8DC", animationDelay: "0.3s", animationFillMode: "forwards" }}
+              style={{
+                color: "#F2E8DC",
+                animationDelay: "0.3s",
+                animationFillMode: "forwards",
+              }}
             >
               We Get You There —<br />
               and We Get You In.
@@ -66,7 +85,11 @@ export default function HeroSection() {
             {/* Subheadline */}
             <p
               className="text-lg font-normal leading-[1.7] max-w-[680px] mb-5 animate-fade-in opacity-0"
-              style={{ color: "#C9BDB5", animationDelay: "0.5s", animationFillMode: "forwards" }}
+              style={{
+                color: "#C9BDB5",
+                animationDelay: "0.5s",
+                animationFillMode: "forwards",
+              }}
             >
               Teerma Consultancy has guided hundreds of students to top
               universities across Cyprus, Russia, Malaysia, China, Uzbekistan,
@@ -78,11 +101,15 @@ export default function HeroSection() {
             {/* Supporting Line */}
             <p
               className="text-base font-light italic animate-fade-in mb-10 opacity-0"
-              style={{ color: "#F2E8DC", animationDelay: "0.7s", animationFillMode: "forwards" }}
+              style={{
+                color: "#F2E8DC",
+                animationDelay: "0.7s",
+                animationFillMode: "forwards",
+              }}
             >
               <span style={{ opacity: 0.85 }}>
-                No guesswork. No empty promises. Just expert guidance from people
-                who have done this hundreds of times.
+                No guesswork. No empty promises. Just expert guidance from
+                people who have done this hundreds of times.
               </span>
             </p>
 
@@ -99,8 +126,12 @@ export default function HeroSection() {
                   backgroundColor: "#D4522A",
                   color: "#FFFFFF",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#BE4924")}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#D4522A")}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.backgroundColor = "#BE4924")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.backgroundColor = "#D4522A")
+                }
               >
                 Book Your Consultation
               </Button>
@@ -161,7 +192,11 @@ export default function HeroSection() {
                         stroke="#4BBFB8"
                         strokeWidth={2.5}
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M5 13l4 4L19 7"
+                        />
                       </svg>
                       <span
                         className="text-[13px] font-medium whitespace-nowrap"
@@ -191,7 +226,11 @@ export default function HeroSection() {
                       stroke="#4BBFB8"
                       strokeWidth={2.5}
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M5 13l4 4L19 7"
+                      />
                     </svg>
                     <span
                       className="text-[13px] font-medium"
@@ -204,54 +243,15 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
-
-          {/* Right Visual — 40% (desktop only) */}
-          <div className="hidden lg:flex w-[40%] items-center justify-center">
-            <div className="relative w-full max-w-md aspect-square">
-              <div
-                className="absolute inset-0 rounded-full opacity-[0.08]"
-                style={{
-                  background: "radial-gradient(circle, #4BBFB8 0%, transparent 70%)",
-                }}
-              />
-              <svg
-                viewBox="0 0 400 400"
-                className="w-full h-full animate-[spin_60s_linear_infinite]"
-                fill="none"
-              >
-                <circle cx="200" cy="200" r="180" stroke="#4BBFB8" strokeWidth="0.5" opacity="0.3" />
-                <circle cx="200" cy="200" r="140" stroke="#4BBFB8" strokeWidth="0.5" opacity="0.2" />
-                <circle cx="200" cy="200" r="100" stroke="#4BBFB8" strokeWidth="0.5" opacity="0.15" />
-                <ellipse cx="200" cy="200" rx="180" ry="60" stroke="#4BBFB8" strokeWidth="0.5" opacity="0.25" />
-                <ellipse cx="200" cy="200" rx="60" ry="180" stroke="#4BBFB8" strokeWidth="0.5" opacity="0.25" />
-                <ellipse cx="200" cy="200" rx="180" ry="60" stroke="#4BBFB8" strokeWidth="0.5" opacity="0.2" transform="rotate(60 200 200)" />
-                <ellipse cx="200" cy="200" rx="180" ry="60" stroke="#4BBFB8" strokeWidth="0.5" opacity="0.2" transform="rotate(120 200 200)" />
-                {/* Dots representing destinations */}
-                <circle cx="120" cy="140" r="4" fill="#D4522A" opacity="0.8" />
-                <circle cx="280" cy="160" r="4" fill="#D4522A" opacity="0.8" />
-                <circle cx="200" cy="80" r="4" fill="#D4522A" opacity="0.8" />
-                <circle cx="310" cy="220" r="4" fill="#D4522A" opacity="0.8" />
-                <circle cx="100" cy="240" r="4" fill="#D4522A" opacity="0.8" />
-                <circle cx="240" cy="300" r="4" fill="#D4522A" opacity="0.8" />
-                <circle cx="160" cy="310" r="4" fill="#D4522A" opacity="0.8" />
-                {/* Connection lines from center */}
-                <line x1="200" y1="200" x2="120" y2="140" stroke="#4BBFB8" strokeWidth="0.3" opacity="0.3" />
-                <line x1="200" y1="200" x2="280" y2="160" stroke="#4BBFB8" strokeWidth="0.3" opacity="0.3" />
-                <line x1="200" y1="200" x2="200" y2="80" stroke="#4BBFB8" strokeWidth="0.3" opacity="0.3" />
-                <line x1="200" y1="200" x2="310" y2="220" stroke="#4BBFB8" strokeWidth="0.3" opacity="0.3" />
-                <line x1="200" y1="200" x2="100" y2="240" stroke="#4BBFB8" strokeWidth="0.3" opacity="0.3" />
-                <line x1="200" y1="200" x2="240" y2="300" stroke="#4BBFB8" strokeWidth="0.3" opacity="0.3" />
-                <line x1="200" y1="200" x2="160" y2="310" stroke="#4BBFB8" strokeWidth="0.3" opacity="0.3" />
-                <circle cx="200" cy="200" r="6" fill="#4BBFB8" opacity="0.6" />
-              </svg>
-            </div>
-          </div>
         </div>
       </div>
       {/* Mobile sticky WhatsApp bar */}
       <div
         className="sm:hidden fixed bottom-0 left-0 right-0 z-50 p-3"
-        style={{ backgroundColor: "#2A2320", borderTop: "1px solid rgba(75, 191, 184, 0.2)" }}
+        style={{
+          backgroundColor: "#2A2320",
+          borderTop: "1px solid rgba(75, 191, 184, 0.2)",
+        }}
       >
         <a
           href="https://wa.me/923058787447"

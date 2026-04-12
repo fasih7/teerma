@@ -19,7 +19,15 @@ export interface FeeRow {
 export interface QuickFact {
   label: string;
   value: string;
-  icon?: "location" | "language" | "recognition" | "fee" | "semesters" | "scholarship" | "work" | "other";
+  icon?:
+    | "location"
+    | "language"
+    | "recognition"
+    | "fee"
+    | "semesters"
+    | "scholarship"
+    | "work"
+    | "other";
 }
 
 export type BadgeType =
@@ -39,7 +47,14 @@ export interface CountrySectionCopy {
 }
 
 export interface CountryHighlightBlock {
-  type: "annualCost" | "feeWaiver" | "scholarship" | "partTimeWork" | "cscFullyFunded" | "whoPmdcRecognition" | "whoEcfmgPmdc";
+  type:
+    | "annualCost"
+    | "feeWaiver"
+    | "scholarship"
+    | "partTimeWork"
+    | "cscFullyFunded"
+    | "whoPmdcRecognition"
+    | "whoEcfmgPmdc";
   heading?: string;
   body: string;
   style?: "teal" | "green" | "gold";
@@ -108,19 +123,68 @@ const countriesData: CountryConfig[] = [
     hasScholarshipNote: true,
     scholarshipNote: "Self-funded placements — no scholarships currently",
     quickFacts: [
-      { label: "Location", value: "Eastern Europe & Northern Asia", icon: "location" },
-      { label: "Language of Instruction", value: "English & Russian Medium", icon: "language" },
-      { label: "Degree Recognition", value: "Internationally Recognized (PMC for Medicine)", icon: "recognition" },
-      { label: "Tuition Fee Range", value: "$3,600 – $5,000 / year (degree programs)", icon: "fee" },
+      {
+        label: "Location",
+        value: "Eastern Europe & Northern Asia",
+        icon: "location",
+      },
+      {
+        label: "Language of Instruction",
+        value: "English & Russian Medium",
+        icon: "language",
+      },
+      {
+        label: "Degree Recognition",
+        value: "Internationally Recognized (PMC for Medicine)",
+        icon: "recognition",
+      },
+      {
+        label: "Tuition Fee Range",
+        value: "$3,600 – $5,000 / year (degree programs)",
+        icon: "fee",
+      },
       { label: "Semesters Per Year", value: "2 Semesters", icon: "semesters" },
-      { label: "Known For", value: "Medicine, Engineering, Technology", icon: "other" },
+      {
+        label: "Known For",
+        value: "Medicine, Engineering, Technology",
+        icon: "other",
+      },
     ],
-    fieldsOfStudy: ["Medicine (MBBS)", "Engineering", "Computer Science", "Russian Language Program"],
+    fieldsOfStudy: [
+      "Medicine (MBBS)",
+      "Engineering",
+      "Computer Science",
+      "Russian Language Program",
+    ],
     feeTable: [
-      { program: "Russian Language Program", duration: "1 Year", fee: "$5,000 – $7,000", notes: "Total complete package — all inclusive", highlight: "orange" },
-      { program: "Medicine (MBBS)", duration: "6 Years", fee: "$1,800 – $2,500 / semester", notes: "2 semesters/year = approx. $3,600–$5,000/year", highlight: "orange" },
-      { program: "Engineering", duration: "4–5 Years", fee: "$1,800 – $2,500 / semester", notes: "2 semesters/year = approx. $3,600–$5,000/year", highlight: "orange" },
-      { program: "Computer Science", duration: "4 Years", fee: "$1,800 – $2,500 / semester", notes: "2 semesters/year = approx. $3,600–$5,000/year", highlight: "orange" },
+      {
+        program: "Russian Language Program",
+        duration: "1 Year",
+        fee: "$5,000 – $7,000",
+        notes: "Total complete package — all inclusive",
+        highlight: "orange",
+      },
+      {
+        program: "Medicine (MBBS)",
+        duration: "6 Years",
+        fee: "$1,800 – $2,500 / semester",
+        notes: "2 semesters/year = approx. $3,600–$5,000/year",
+        highlight: "orange",
+      },
+      {
+        program: "Engineering",
+        duration: "4–5 Years",
+        fee: "$1,800 – $2,500 / semester",
+        notes: "2 semesters/year = approx. $3,600–$5,000/year",
+        highlight: "orange",
+      },
+      {
+        program: "Computer Science",
+        duration: "4 Years",
+        fee: "$1,800 – $2,500 / semester",
+        notes: "2 semesters/year = approx. $3,600–$5,000/year",
+        highlight: "orange",
+      },
     ],
     annualCostNote:
       "Russian universities run 2 semesters per year. At $1,800–$2,500 per semester, the annual tuition cost for Medicine, Engineering, and Computer Science works out to approximately $3,600–$5,000 per year — making Russia one of the most affordable destinations for a globally recognized degree in these fields.",
@@ -165,7 +229,7 @@ const countriesData: CountryConfig[] = [
     slug: "malaysia",
     name: "Malaysia",
     tagline: "Modern Campuses. English Medium. A Culture That Feels Like Home.",
-    heroImage: "/images/countries/malaysia.png",
+    heroImage: "/images/countries/malaysia.jpg",
     seo: {
       title: "Study in Malaysia | Teerma Consultancy",
       description:
@@ -178,20 +242,66 @@ const countriesData: CountryConfig[] = [
     badges: ["englishMedium", "scholarshipAvailable", "partTimeWorkAllowed"],
     quickFacts: [
       { label: "Location", value: "Southeast Asia", icon: "location" },
-      { label: "Language of Instruction", value: "English Medium Only", icon: "language" },
-      { label: "Degree Recognition", value: "Internationally Recognized", icon: "recognition" },
+      {
+        label: "Language of Instruction",
+        value: "English Medium Only",
+        icon: "language",
+      },
+      {
+        label: "Degree Recognition",
+        value: "Internationally Recognized",
+        icon: "recognition",
+      },
       { label: "University Type", value: "Public Universities", icon: "other" },
-      { label: "Annual Fee (Masters/PhD)", value: "Approx. $2,000 – $4,000/year", icon: "fee" },
+      {
+        label: "Annual Fee (Masters/PhD)",
+        value: "Approx. $2,000 – $4,000/year",
+        icon: "fee",
+      },
       { label: "Semesters Per Year", value: "2 Semesters", icon: "semesters" },
-      { label: "Scholarship", value: "Merit & Research — for eligible enrolled students", icon: "scholarship" },
-      { label: "Part-Time Work", value: "Allowed on student visa", icon: "work" },
-      { label: "Muslim Friendly", value: "Muslim-majority country, Halal food widely available", icon: "other" },
+      {
+        label: "Scholarship",
+        value: "Merit & Research — for eligible enrolled students",
+        icon: "scholarship",
+      },
+      {
+        label: "Part-Time Work",
+        value: "Allowed on student visa",
+        icon: "work",
+      },
+      {
+        label: "Muslim Friendly",
+        value: "Muslim-majority country, Halal food widely available",
+        icon: "other",
+      },
     ],
-    fieldsOfStudy: ["Engineering", "Computer Science", "Business & Management", "Hospitality & Tourism"],
+    fieldsOfStudy: [
+      "Engineering",
+      "Computer Science",
+      "Business & Management",
+      "Hospitality & Tourism",
+    ],
     feeTable: [
-      { program: "Bachelor's", duration: "3–4 Years", fee: "Contact us for details", notes: "Fees vary by university and field" },
-      { program: "Master's", duration: "1.5–2 Years", fee: "$1,000 – $2,000 / semester", notes: "Public universities, 2 semesters/year", highlight: "orange" },
-      { program: "PhD", duration: "3–5 Years", fee: "$1,000 – $2,000 / semester", notes: "Public universities, 2 semesters/year", highlight: "orange" },
+      {
+        program: "Bachelor's",
+        duration: "3–4 Years",
+        fee: "Contact us for details",
+        notes: "Fees vary by university and field",
+      },
+      {
+        program: "Master's",
+        duration: "1.5–2 Years",
+        fee: "$1,000 – $2,000 / semester",
+        notes: "Public universities, 2 semesters/year",
+        highlight: "orange",
+      },
+      {
+        program: "PhD",
+        duration: "3–5 Years",
+        fee: "$1,000 – $2,000 / semester",
+        notes: "Public universities, 2 semesters/year",
+        highlight: "orange",
+      },
     ],
     annualCostNote:
       "2 semesters per year × $1,000–$2,000 per semester = approximately $2,000–$4,000 per year at Malaysian public universities. This makes Malaysia one of the most affordable destinations for internationally recognized postgraduate degrees — with the added bonus of scholarship eligibility after enrollment.",
@@ -243,7 +353,7 @@ const countriesData: CountryConfig[] = [
     slug: "cyprus",
     name: "Cyprus",
     tagline: "A European Degree Without European Prices",
-    heroImage: "/images/countries/cyprus.webp",
+    heroImage: "/images/countries/cyprus.jpg",
     seo: {
       title: "Study in Cyprus | Teerma Consultancy",
       description:
@@ -257,16 +367,57 @@ const countriesData: CountryConfig[] = [
     quickFacts: [
       { label: "Location", value: "Mediterranean Europe", icon: "location" },
       { label: "Language of Instruction", value: "English", icon: "language" },
-      { label: "Degree Recognition", value: "EU & Internationally Recognized", icon: "recognition" },
-      { label: "Tuition Fee Range", value: "EUR 5,000 – EUR 9,000", icon: "fee" },
-      { label: "Scholarship / Fee Waiver", value: "50% Fee Waiver from Year 2 + Merit Scholarships", icon: "scholarship" },
-      { label: "Student Life", value: "Safe, vibrant, internationally diverse", icon: "other" },
+      {
+        label: "Degree Recognition",
+        value: "EU & Internationally Recognized",
+        icon: "recognition",
+      },
+      {
+        label: "Tuition Fee Range",
+        value: "EUR 5,000 – EUR 9,000",
+        icon: "fee",
+      },
+      {
+        label: "Scholarship / Fee Waiver",
+        value: "50% Fee Waiver from Year 2 + Merit Scholarships",
+        icon: "scholarship",
+      },
+      {
+        label: "Student Life",
+        value: "Safe, vibrant, internationally diverse",
+        icon: "other",
+      },
     ],
-    fieldsOfStudy: ["Engineering", "Business & Management", "Law", "Computer Science", "Hospitality & Tourism", "Arts & Humanities"],
+    fieldsOfStudy: [
+      "Engineering",
+      "Business & Management",
+      "Law",
+      "Computer Science",
+      "Hospitality & Tourism",
+      "Arts & Humanities",
+    ],
     feeTable: [
-      { program: "Foundation", duration: "1 Year", fee: "€5,000 – €5,500", notes: "Total complete fee for the full program", highlight: "teal" },
-      { program: "Bachelor's", duration: "3–4 Years", fee: "€5,000 – €6,650 / year", notes: "50% fee waiver applies from Year 2 onwards", highlight: "teal" },
-      { program: "Master's", duration: "1.5 Years", fee: "€7,000 – €9,000 TOTAL", notes: "Complete fee — not per year", highlight: "teal" },
+      {
+        program: "Foundation",
+        duration: "1 Year",
+        fee: "€5,000 – €5,500",
+        notes: "Total complete fee for the full program",
+        highlight: "teal",
+      },
+      {
+        program: "Bachelor's",
+        duration: "3–4 Years",
+        fee: "€5,000 – €6,650 / year",
+        notes: "50% fee waiver applies from Year 2 onwards",
+        highlight: "teal",
+      },
+      {
+        program: "Master's",
+        duration: "1.5 Years",
+        fee: "€7,000 – €9,000 TOTAL",
+        notes: "Complete fee — not per year",
+        highlight: "teal",
+      },
     ],
     feeDisclaimer: undefined,
     highlightBlocks: [
@@ -305,7 +456,8 @@ const countriesData: CountryConfig[] = [
     id: "china",
     slug: "china",
     name: "China",
-    tagline: "One of the World's Most Generous Study Destinations for Pakistani Students",
+    tagline:
+      "One of the World's Most Generous Study Destinations for Pakistani Students",
     heroImage: "/images/countries/china.jpg",
     seo: {
       title: "Study in China | Teerma Consultancy",
@@ -319,14 +471,43 @@ const countriesData: CountryConfig[] = [
     badges: ["englishMedium", "cscScholarship", "whoPmdc"],
     quickFacts: [
       { label: "Location", value: "East Asia", icon: "location" },
-      { label: "Language of Instruction", value: "English Medium Only", icon: "language" },
-      { label: "MBBS Recognition", value: "WHO & PMDC Approved", icon: "recognition" },
-      { label: "Flagship Benefit", value: "Fully Funded Master's & PhD + Monthly Stipend", icon: "scholarship" },
-      { label: "Fee Range", value: "From 4,500 RMB/year to Fully Funded", icon: "fee" },
+      {
+        label: "Language of Instruction",
+        value: "English Medium Only",
+        icon: "language",
+      },
+      {
+        label: "MBBS Recognition",
+        value: "WHO & PMDC Approved",
+        icon: "recognition",
+      },
+      {
+        label: "Flagship Benefit",
+        value: "Fully Funded Master's & PhD + Monthly Stipend",
+        icon: "scholarship",
+      },
+      {
+        label: "Fee Range",
+        value: "From 4,500 RMB/year to Fully Funded",
+        icon: "fee",
+      },
       { label: "Semesters Per Year", value: "2 Semesters", icon: "semesters" },
-      { label: "Degree Recognition", value: "Internationally Recognized", icon: "recognition" },
-      { label: "Programs Available", value: "Language · Diploma · Bachelor's · MBBS · Master's · PhD", icon: "other" },
-      { label: "Pakistan-China Ties", value: "Strong diplomatic & economic partnership — welcoming environment for Pakistani students", icon: "other" },
+      {
+        label: "Degree Recognition",
+        value: "Internationally Recognized",
+        icon: "recognition",
+      },
+      {
+        label: "Programs Available",
+        value: "Language · Diploma · Bachelor's · MBBS · Master's · PhD",
+        icon: "other",
+      },
+      {
+        label: "Pakistan-China Ties",
+        value:
+          "Strong diplomatic & economic partnership — welcoming environment for Pakistani students",
+        icon: "other",
+      },
     ],
     fieldsOfStudy: [
       "Medicine (MBBS)",
@@ -339,14 +520,36 @@ const countriesData: CountryConfig[] = [
       "Chinese Language Program",
     ],
     feeTable: [
-      { program: "Chinese Language Program", duration: "1 Year", fee: "6,000–10,000 RMB/yr", feeSecondary: "~$830–$1,380/yr", notes: "Partial scholarships at select universities", highlight: "orange" },
-      { program: "Diploma & Engineering", duration: "2–4 Years", fee: "4,500–10,000 RMB/yr", feeSecondary: "~$620–$1,380/yr", notes: "Partial scholarships available", highlight: "orange" },
-      { program: "MBBS", duration: "6 Years", fee: "15,000–35,000 RMB/yr", feeSecondary: "~$2,070–$4,830/yr", notes: "WHO & PMDC recognized", highlight: "orange" },
+      {
+        program: "Chinese Language Program",
+        duration: "1 Year",
+        fee: "6,000–10,000 RMB/yr",
+        feeSecondary: "~$830–$1,380/yr",
+        notes: "Partial scholarships at select universities",
+        highlight: "orange",
+      },
+      {
+        program: "Diploma & Engineering",
+        duration: "2–4 Years",
+        fee: "4,500–10,000 RMB/yr",
+        feeSecondary: "~$620–$1,380/yr",
+        notes: "Partial scholarships available",
+        highlight: "orange",
+      },
+      {
+        program: "MBBS",
+        duration: "6 Years",
+        fee: "15,000–35,000 RMB/yr",
+        feeSecondary: "~$2,070–$4,830/yr",
+        notes: "WHO & PMDC recognized",
+        highlight: "orange",
+      },
       {
         program: "Master's",
         duration: "2–3 Years",
         fee: "FULLY FUNDED (CSC)",
-        notes: "Stipend: 1,000–3,000 RMB/month. Tuition + accommodation + monthly stipend",
+        notes:
+          "Stipend: 1,000–3,000 RMB/month. Tuition + accommodation + monthly stipend",
         highlight: "gold",
         isFullyFunded: true,
       },
@@ -354,12 +557,14 @@ const countriesData: CountryConfig[] = [
         program: "PhD",
         duration: "3–5 Years",
         fee: "FULLY FUNDED (CSC)",
-        notes: "Stipend: 1,500–3,500 RMB/month. Tuition + accommodation + monthly stipend",
+        notes:
+          "Stipend: 1,500–3,500 RMB/month. Tuition + accommodation + monthly stipend",
         highlight: "gold",
         isFullyFunded: true,
       },
     ],
-    feeDisclaimer: "USD approximations based on current exchange rates. RMB figures are accurate.",
+    feeDisclaimer:
+      "USD approximations based on current exchange rates. RMB figures are accurate.",
     highlightBlocks: [
       {
         type: "cscFullyFunded",
@@ -406,7 +611,8 @@ const countriesData: CountryConfig[] = [
     id: "uzbekistan",
     slug: "uzbekistan",
     name: "Uzbekistan",
-    tagline: "WHO & PMDC Recognized Medical Degree. English Medium. Genuinely Affordable.",
+    tagline:
+      "WHO & PMDC Recognized Medical Degree. English Medium. Genuinely Affordable.",
     heroImage: "/images/countries/uzbekistan.jpg",
     seo: {
       title: "Study Medicine in Uzbekistan | Teerma Consultancy",
@@ -422,22 +628,72 @@ const countriesData: CountryConfig[] = [
     scholarshipNote: "Self-funded placements — no scholarships currently",
     partnerUniversity: "Bukhara State Medical Institute",
     quickFacts: [
-      { label: "WHO Recognition", value: "World Health Organization Recognized", icon: "recognition" },
-      { label: "ECFMG Listed", value: "International Medical Education Directory", icon: "recognition" },
-      { label: "PMDC Approved", value: "Pakistan Medical & Dental Council Approved", icon: "recognition" },
-      { label: "Location", value: "Central Asia — Bukhara, Uzbekistan", icon: "location" },
-      { label: "Language of Instruction", value: "English Medium Only", icon: "language" },
+      {
+        label: "WHO Recognition",
+        value: "World Health Organization Recognized",
+        icon: "recognition",
+      },
+      {
+        label: "ECFMG Listed",
+        value: "International Medical Education Directory",
+        icon: "recognition",
+      },
+      {
+        label: "PMDC Approved",
+        value: "Pakistan Medical & Dental Council Approved",
+        icon: "recognition",
+      },
+      {
+        label: "Location",
+        value: "Central Asia — Bukhara, Uzbekistan",
+        icon: "location",
+      },
+      {
+        label: "Language of Instruction",
+        value: "English Medium Only",
+        icon: "language",
+      },
       { label: "Program Offered", value: "MBBS — Medicine", icon: "other" },
-      { label: "Partner University", value: "Bukhara State Medical Institute", icon: "other" },
-      { label: "Annual Cost (All-In)", value: "Approx. $4,300 per year", icon: "fee" },
+      {
+        label: "Partner University",
+        value: "Bukhara State Medical Institute",
+        icon: "other",
+      },
+      {
+        label: "Annual Cost (All-In)",
+        value: "Approx. $4,300 per year",
+        icon: "fee",
+      },
       { label: "Semesters Per Year", value: "2 Semesters", icon: "semesters" },
     ],
     fieldsOfStudy: ["Medicine (MBBS)"],
     feeTable: [
-      { program: "Tuition Fee", duration: "Per semester", fee: "$1,600", notes: "Bukhara State Medical Institute" },
-      { program: "Hostel / Accommodation", duration: "Per semester", fee: "$300", notes: "On-campus accommodation per semester" },
-      { program: "Administration Charges", duration: "Per semester", fee: "$250", notes: "Per semester administrative fee" },
-      { program: "TOTAL PER SEMESTER", duration: "", fee: "$2,150", notes: "All charges combined — no hidden fees", highlight: "total", isTotalRow: true },
+      {
+        program: "Tuition Fee",
+        duration: "Per semester",
+        fee: "$1,600",
+        notes: "Bukhara State Medical Institute",
+      },
+      {
+        program: "Hostel / Accommodation",
+        duration: "Per semester",
+        fee: "$300",
+        notes: "On-campus accommodation per semester",
+      },
+      {
+        program: "Administration Charges",
+        duration: "Per semester",
+        fee: "$250",
+        notes: "Per semester administrative fee",
+      },
+      {
+        program: "TOTAL PER SEMESTER",
+        duration: "",
+        fee: "$2,150",
+        notes: "All charges combined — no hidden fees",
+        highlight: "total",
+        isTotalRow: true,
+      },
     ],
     annualCostNote:
       "2 semesters per year × $2,150 per semester = approximately $4,300 per year — covering tuition, accommodation, and all administration charges. No hidden fees. For a WHO, ECFMG, and PMDC recognized English-medium medical degree, this is one of the most affordable complete packages available to Pakistani students anywhere in the world.",
@@ -479,7 +735,13 @@ const countriesData: CountryConfig[] = [
 ];
 
 /** All country IDs in display order (e.g. for homepage carousel). */
-export const countryIds = ["uzbekistan", "china", "cyprus", "malaysia", "russia"] as const;
+export const countryIds = [
+  "uzbekistan",
+  "china",
+  "cyprus",
+  "malaysia",
+  "russia",
+] as const;
 
 export type CountryId = (typeof countryIds)[number];
 

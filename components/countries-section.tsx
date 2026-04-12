@@ -73,13 +73,13 @@ export default function CountriesSection() {
           </p>
         </div>
 
-        {/* Horizontal scroll wrapper with buttons */}
-        <div className="relative flex items-center gap-3">
+        {/* Horizontal scroll: flex-1 min-w-0 so the strip can shrink; cards min-w-full on small screens so one swipe = one card */}
+        <div className="relative flex items-stretch md:items-center gap-0 md:gap-3">
           <button
             type="button"
             onClick={() => scroll("left")}
             aria-label="Scroll countries left"
-            className={`shrink-0 p-3 rounded-full border-2 transition-all shadow-md hover:scale-110 ${
+            className={`hidden md:flex shrink-0 self-center p-3 rounded-full border-2 transition-all shadow-md hover:scale-110 ${
               canScrollLeft
                 ? "border-[#4BBFB8]/50 text-[#4BBFB8] hover:bg-[#4BBFB8] hover:text-[#2A2320] hover:border-[#4BBFB8]"
                 : "border-white/10 text-white/20 cursor-not-allowed opacity-40"
@@ -104,41 +104,49 @@ export default function CountriesSection() {
           <div
             ref={scrollRef}
             onScroll={updateScrollState}
-            className="flex gap-6 overflow-x-auto scroll-smooth py-2 -mx-1 snap-x snap-mandatory"
-            style={{ scrollbarWidth: "none" }}
+            className="flex flex-1 min-w-0 gap-4 md:gap-6 overflow-x-auto overflow-y-hidden py-2 -mx-1 px-1 snap-x snap-mandatory overscroll-x-contain [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
           >
             {countries.map((country) => (
               <Link
                 key={country.id}
                 href={`/countries/${country.slug}`}
-                className="snap-start block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4BBFB8] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1B2D3A] rounded-xl"
+                className="snap-start [scroll-snap-stop:always] shrink-0 block w-full min-w-full max-w-full md:w-[280px] md:min-w-[280px] md:max-w-[280px] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4BBFB8] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1B2D3A] rounded-xl"
               >
                 <Card
-                  className="group relative h-[380px] w-[280px] min-w-[280px] overflow-hidden rounded-xl border-2 border-white/10 hover:border-[#4BBFB8]/60 cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_8px_32px_rgba(75,191,184,0.2)]"
+                  className="group relative h-[min(380px,72vw)] sm:h-[380px] overflow-hidden rounded-xl border border-white/[0.12] bg-[#162530]/90 shadow-lg shadow-black/20 ring-1 ring-white/[0.06] transition-[transform,box-shadow,border-color] duration-300 md:hover:border-[#4BBFB8]/50 md:hover:shadow-[0_12px_40px_rgba(75,191,184,0.18)] md:hover:-translate-y-0.5 cursor-pointer"
                 >
                   <div className="relative w-full h-full">
-                    <div className="absolute inset-0 overflow-hidden">
+                    <div className="absolute inset-0 overflow-hidden rounded-[inherit]">
                       <Image
                         src={country.heroImage}
                         alt={country.name}
                         fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-110"
-                        sizes="280px"
+                        sizes="(max-width: 768px) 100vw, 280px"
+                        quality={90}
+                        className="object-cover object-center transition-transform duration-500 ease-out md:group-hover:scale-[1.04]"
                       />
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent group-hover:from-black/60 group-hover:via-black/15 group-hover:to-transparent transition-all duration-300" />
+                    {/* Readability at bottom only so photos stay vivid */}
+                    <div
+                      className="absolute inset-0 pointer-events-none rounded-[inherit]"
+                      style={{
+                        background:
+                          "linear-gradient(to top, rgba(10,18,24,0.82) 0%, rgba(10,18,24,0.35) 38%, rgba(10,18,24,0.08) 55%, transparent 72%)",
+                      }}
+                    />
+                    <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#4BBFB8]/35 to-transparent opacity-80" />
 
-                    <CardContent className="relative h-full flex flex-col justify-end p-5 z-10">
-                      <h3 className="text-xl font-bold text-white mb-1.5 group-hover:text-[#4BBFB8] transition-colors duration-300">
+                    <CardContent className="relative h-full flex flex-col justify-end p-5 sm:p-6 z-10">
+                      <h3 className="text-xl sm:text-2xl font-bold text-[#F2E8DC] mb-1.5 md:group-hover:text-[#4BBFB8] transition-colors duration-300 drop-shadow-sm">
                         {country.name}
                       </h3>
-                      <p className="text-sm text-white/90 group-hover:text-white transition-colors duration-300 line-clamp-2">
+                      <p className="text-sm text-[#F2E8DC]/90 md:group-hover:text-[#F2E8DC] transition-colors duration-300 line-clamp-2 leading-relaxed">
                         {country.shortDescription}
                       </p>
-                      <div className="mt-3 h-1 w-0 bg-[#4BBFB8] group-hover:w-12 transition-all duration-300 rounded-full" />
+                      <div className="mt-3 h-0.5 w-0 bg-[#4BBFB8] md:group-hover:w-12 transition-all duration-300 rounded-full" />
                     </CardContent>
 
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-[#4BBFB8]/15 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-tr from-[#4BBFB8]/12 via-transparent to-transparent pointer-events-none rounded-[inherit]" />
                   </div>
                 </Card>
               </Link>
@@ -149,7 +157,7 @@ export default function CountriesSection() {
             type="button"
             onClick={() => scroll("right")}
             aria-label="Scroll countries right"
-            className={`shrink-0 p-3 rounded-full border-2 transition-all shadow-md hover:scale-110 ${
+            className={`hidden md:flex shrink-0 self-center p-3 rounded-full border-2 transition-all shadow-md hover:scale-110 ${
               canScrollRight
                 ? "border-[#4BBFB8]/50 text-[#4BBFB8] hover:bg-[#4BBFB8] hover:text-[#2A2320] hover:border-[#4BBFB8]"
                 : "border-white/10 text-white/20 cursor-not-allowed opacity-40"
