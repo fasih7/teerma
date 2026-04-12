@@ -21,7 +21,7 @@ export default function ContactSection() {
   }>({ type: null, text: "" });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     // Clear message when user starts typing
@@ -80,19 +80,14 @@ export default function ContactSection() {
   };
 
   const countries = [
-    "UK",
     "Australia",
-    "USA",
-    "Canada",
-    "Ireland",
-    "Netherlands",
-    "Germany",
+    "China",
+    "Cyprus",
+    "Finland",
+    "Italy",
     "Malaysia",
-    "Turkey",
-    "UAE",
-    "Hungary",
-    "Indonesia",
-    "New Zealand",
+    "Russia",
+    "Uzbekistan",
   ];
 
   return (
@@ -165,7 +160,10 @@ export default function ContactSection() {
                       Name *
                     </label>
                     <div className="relative">
-                      <div className="absolute left-4 top-1/2 -translate-y-1/2" style={{ color: "#8A7F78" }}>
+                      <div
+                        className="absolute left-4 top-1/2 -translate-y-1/2"
+                        style={{ color: "#8A7F78" }}
+                      >
                         <svg
                           className="w-5 h-5"
                           fill="none"
@@ -188,7 +186,11 @@ export default function ContactSection() {
                         value={formData.name}
                         onChange={handleChange}
                         className="w-full pl-12 pr-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4BBFB8]/30 transition-all"
-                        style={{ backgroundColor: "#F7F4F0", borderColor: "#D8D2CC", color: "#2A2320" }}
+                        style={{
+                          backgroundColor: "#F7F4F0",
+                          borderColor: "#D8D2CC",
+                          color: "#2A2320",
+                        }}
                         placeholder="Your full name"
                       />
                     </div>
@@ -203,7 +205,10 @@ export default function ContactSection() {
                       Email *
                     </label>
                     <div className="relative">
-                      <div className="absolute left-4 top-1/2 -translate-y-1/2" style={{ color: "#8A7F78" }}>
+                      <div
+                        className="absolute left-4 top-1/2 -translate-y-1/2"
+                        style={{ color: "#8A7F78" }}
+                      >
                         <svg
                           className="w-5 h-5"
                           fill="none"
@@ -226,7 +231,11 @@ export default function ContactSection() {
                         value={formData.email}
                         onChange={handleChange}
                         className="w-full pl-12 pr-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4BBFB8]/30 transition-all"
-                        style={{ backgroundColor: "#F7F4F0", borderColor: "#D8D2CC", color: "#2A2320" }}
+                        style={{
+                          backgroundColor: "#F7F4F0",
+                          borderColor: "#D8D2CC",
+                          color: "#2A2320",
+                        }}
                         placeholder="your.email@example.com"
                       />
                     </div>
@@ -241,7 +250,10 @@ export default function ContactSection() {
                       Contact Number *
                     </label>
                     <div className="relative">
-                      <div className="absolute left-4 top-1/2 -translate-y-1/2" style={{ color: "#8A7F78" }}>
+                      <div
+                        className="absolute left-4 top-1/2 -translate-y-1/2"
+                        style={{ color: "#8A7F78" }}
+                      >
                         <svg
                           className="w-5 h-5"
                           fill="none"
@@ -264,7 +276,11 @@ export default function ContactSection() {
                         value={formData.contact}
                         onChange={handleChange}
                         className="w-full pl-12 pr-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4BBFB8]/30 transition-all"
-                        style={{ backgroundColor: "#F7F4F0", borderColor: "#D8D2CC", color: "#2A2320" }}
+                        style={{
+                          backgroundColor: "#F7F4F0",
+                          borderColor: "#D8D2CC",
+                          color: "#2A2320",
+                        }}
                         placeholder="+92 300 1234567"
                       />
                     </div>
@@ -279,7 +295,10 @@ export default function ContactSection() {
                       City
                     </label>
                     <div className="relative">
-                      <div className="absolute left-4 top-1/2 -translate-y-1/2" style={{ color: "#8A7F78" }}>
+                      <div
+                        className="absolute left-4 top-1/2 -translate-y-1/2"
+                        style={{ color: "#8A7F78" }}
+                      >
                         <svg
                           className="w-5 h-5"
                           fill="none"
@@ -307,7 +326,11 @@ export default function ContactSection() {
                         value={formData.city}
                         onChange={handleChange}
                         className="w-full pl-12 pr-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4BBFB8]/30 transition-all"
-                        style={{ backgroundColor: "#F7F4F0", borderColor: "#D8D2CC", color: "#2A2320" }}
+                        style={{
+                          backgroundColor: "#F7F4F0",
+                          borderColor: "#D8D2CC",
+                          color: "#2A2320",
+                        }}
                         placeholder="Your city"
                       />
                     </div>
@@ -322,7 +345,10 @@ export default function ContactSection() {
                       Qualification
                     </label>
                     <div className="relative">
-                      <div className="absolute left-4 top-1/2 -translate-y-1/2" style={{ color: "#8A7F78" }}>
+                      <div
+                        className="absolute left-4 top-1/2 -translate-y-1/2"
+                        style={{ color: "#8A7F78" }}
+                      >
                         <svg
                           className="w-5 h-5"
                           fill="none"
@@ -356,7 +382,11 @@ export default function ContactSection() {
                         value={formData.qualification}
                         onChange={handleChange}
                         className="w-full pl-12 pr-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4BBFB8]/30 transition-all"
-                        style={{ backgroundColor: "#F7F4F0", borderColor: "#D8D2CC", color: "#2A2320" }}
+                        style={{
+                          backgroundColor: "#F7F4F0",
+                          borderColor: "#D8D2CC",
+                          color: "#2A2320",
+                        }}
                         placeholder="e.g., Bachelor's, Master's"
                       />
                     </div>
@@ -371,7 +401,10 @@ export default function ContactSection() {
                       Course of Interest
                     </label>
                     <div className="relative">
-                      <div className="absolute left-4 top-1/2 -translate-y-1/2" style={{ color: "#8A7F78" }}>
+                      <div
+                        className="absolute left-4 top-1/2 -translate-y-1/2"
+                        style={{ color: "#8A7F78" }}
+                      >
                         <svg
                           className="w-5 h-5"
                           fill="none"
@@ -393,7 +426,11 @@ export default function ContactSection() {
                         value={formData.course}
                         onChange={handleChange}
                         className="w-full pl-12 pr-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4BBFB8]/30 transition-all"
-                        style={{ backgroundColor: "#F7F4F0", borderColor: "#D8D2CC", color: "#2A2320" }}
+                        style={{
+                          backgroundColor: "#F7F4F0",
+                          borderColor: "#D8D2CC",
+                          color: "#2A2320",
+                        }}
                         placeholder="e.g., Computer Science, MBA"
                       />
                     </div>
@@ -408,7 +445,10 @@ export default function ContactSection() {
                       Select Country
                     </label>
                     <div className="relative">
-                      <div className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none z-10" style={{ color: "#8A7F78" }}>
+                      <div
+                        className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none z-10"
+                        style={{ color: "#8A7F78" }}
+                      >
                         <svg
                           className="w-5 h-5"
                           fill="none"
@@ -429,7 +469,11 @@ export default function ContactSection() {
                         value={formData.country}
                         onChange={handleChange}
                         className="w-full pl-12 pr-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4BBFB8]/30 transition-all appearance-none cursor-pointer"
-                        style={{ backgroundColor: "#F7F4F0", borderColor: "#D8D2CC", color: "#2A2320" }}
+                        style={{
+                          backgroundColor: "#F7F4F0",
+                          borderColor: "#D8D2CC",
+                          color: "#2A2320",
+                        }}
                       >
                         <option value="">Select a country</option>
                         {countries.map((country) => (
@@ -438,7 +482,10 @@ export default function ContactSection() {
                           </option>
                         ))}
                       </select>
-                      <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: "#8A7F78" }}>
+                      <div
+                        className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"
+                        style={{ color: "#8A7F78" }}
+                      >
                         <svg
                           className="w-5 h-5"
                           fill="none"
@@ -578,7 +625,10 @@ export default function ContactSection() {
                     <div className="flex items-start gap-4 group/item hover:bg-[#F7F4F0] p-3 rounded-lg transition-all duration-200">
                       <div
                         className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 group-hover/item:scale-110 transition-all duration-200 shadow-sm"
-                        style={{ backgroundColor: "rgba(75,191,184,0.12)", color: "#4BBFB8" }}
+                        style={{
+                          backgroundColor: "rgba(75,191,184,0.12)",
+                          color: "#4BBFB8",
+                        }}
                       >
                         <svg
                           className="w-7 h-7"
@@ -601,10 +651,16 @@ export default function ContactSection() {
                         </svg>
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-bold mb-1.5 text-base" style={{ color: "#2A2320" }}>
+                        <h4
+                          className="font-bold mb-1.5 text-base"
+                          style={{ color: "#2A2320" }}
+                        >
                           Head Office
                         </h4>
-                        <p className="leading-relaxed" style={{ color: "#5A5048" }}>
+                        <p
+                          className="leading-relaxed"
+                          style={{ color: "#5A5048" }}
+                        >
                           Office # 31/2, Upper Ground, Mall of Lahore,
                           <br />
                           172 Tufail Road, Cantt Lahore.
@@ -615,7 +671,10 @@ export default function ContactSection() {
                     <div className="flex items-start gap-4 group/item hover:bg-[#F7F4F0] p-3 rounded-lg transition-all duration-200">
                       <div
                         className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 group-hover/item:scale-110 transition-all duration-200 shadow-sm"
-                        style={{ backgroundColor: "rgba(212,82,42,0.12)", color: "#D4522A" }}
+                        style={{
+                          backgroundColor: "rgba(212,82,42,0.12)",
+                          color: "#D4522A",
+                        }}
                       >
                         <svg
                           className="w-7 h-7"
@@ -632,10 +691,16 @@ export default function ContactSection() {
                         </svg>
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-bold mb-1.5 text-base" style={{ color: "#2A2320" }}>
+                        <h4
+                          className="font-bold mb-1.5 text-base"
+                          style={{ color: "#2A2320" }}
+                        >
                           Phone
                         </h4>
-                        <p className="leading-relaxed" style={{ color: "#5A5048" }}>
+                        <p
+                          className="leading-relaxed"
+                          style={{ color: "#5A5048" }}
+                        >
                           +92 305 8787447
                         </p>
                       </div>
@@ -644,7 +709,10 @@ export default function ContactSection() {
                     <div className="flex items-start gap-4 group/item hover:bg-[#F7F4F0] p-3 rounded-lg transition-all duration-200">
                       <div
                         className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 group-hover/item:scale-110 transition-all duration-200 shadow-sm"
-                        style={{ backgroundColor: "rgba(75,191,184,0.12)", color: "#4BBFB8" }}
+                        style={{
+                          backgroundColor: "rgba(75,191,184,0.12)",
+                          color: "#4BBFB8",
+                        }}
                       >
                         <svg
                           className="w-7 h-7"
@@ -661,10 +729,16 @@ export default function ContactSection() {
                         </svg>
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-bold mb-1.5 text-base" style={{ color: "#2A2320" }}>
+                        <h4
+                          className="font-bold mb-1.5 text-base"
+                          style={{ color: "#2A2320" }}
+                        >
                           Email
                         </h4>
-                        <p className="leading-relaxed" style={{ color: "#5A5048" }}>
+                        <p
+                          className="leading-relaxed"
+                          style={{ color: "#5A5048" }}
+                        >
                           info@teermconsultancy.com
                         </p>
                       </div>
@@ -673,7 +747,10 @@ export default function ContactSection() {
                     <div className="flex items-start gap-4 group/item hover:bg-[#F7F4F0] p-3 rounded-lg transition-all duration-200">
                       <div
                         className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 group-hover/item:scale-110 transition-all duration-200 shadow-sm"
-                        style={{ backgroundColor: "rgba(212,82,42,0.12)", color: "#D4522A" }}
+                        style={{
+                          backgroundColor: "rgba(212,82,42,0.12)",
+                          color: "#D4522A",
+                        }}
                       >
                         <svg
                           className="w-7 h-7"
@@ -690,10 +767,16 @@ export default function ContactSection() {
                         </svg>
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-bold mb-1.5 text-base" style={{ color: "#2A2320" }}>
+                        <h4
+                          className="font-bold mb-1.5 text-base"
+                          style={{ color: "#2A2320" }}
+                        >
                           Working Hours
                         </h4>
-                        <p className="leading-relaxed" style={{ color: "#5A5048" }}>
+                        <p
+                          className="leading-relaxed"
+                          style={{ color: "#5A5048" }}
+                        >
                           Monday to Friday: 10:00 AM - 06:00 PM
                           <br />
                           Saturday: 11:00 AM - 4:00 PM

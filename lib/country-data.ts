@@ -736,9 +736,9 @@ const countriesData: CountryConfig[] = [
 
 /** All country IDs in display order (e.g. for homepage carousel). */
 export const countryIds = [
-  "uzbekistan",
-  "china",
   "cyprus",
+  "china",
+  "uzbekistan",
   "malaysia",
   "russia",
 ] as const;
